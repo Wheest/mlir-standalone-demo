@@ -40,4 +40,9 @@ def Standalone_FooOp : Standalone_Op<"foo", [NoSideEffect,
     }];
 }
 
+
+def Standalone_MyOp : Standalone_Op<"MyOp"> {
+    let arguments = (ins MemRefOf<[I64]>:$lhs, MemRefOf<[I64]>:$rhs, MemRefOf<[I64]>:$res);
+}
+
 #endif // STANDALONE_OPS
